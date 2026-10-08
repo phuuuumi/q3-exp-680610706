@@ -54,7 +54,7 @@ export function ItemList() {
                   <TableCell>
                     <Badge variant="outline">{e.category}</Badge>
                   </TableCell>
-                  <TableCell className="text-right font-semibold">฿{e.amount}</TableCell>
+                  <TableCell className="text-right font-semibold">฿{e.amount.toFixed(2)}</TableCell>
                   <TableCell className="text-right">
                     <Button
                       className="text-white bg-red-500 hover:bg-red-600 text-white"
