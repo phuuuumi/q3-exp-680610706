@@ -13,7 +13,8 @@ import {
 import { Trash } from "lucide-react";
 
 export function ItemList() {
-  const { expenses } = useItemStore();
+  const expenses = useItemStore((s) => s.expenses);
+  const deleteExpense = useItemStore((s) => s.deleteExpense);
 
   return (
     <Card>
@@ -40,29 +41,33 @@ export function ItemList() {
                 >
                   No expenses recorded yet.
                 </TableCell>
+
               </TableRow>
             ) : (
               // replace the following hardcoded row with the dynamic mapping of data items
-              <TableRow>
-                <TableCell className="text-muted-foreground">
-                  2026-10-05
-                </TableCell>
-                <TableCell className="font-medium">ซื้อของ 7-11</TableCell>
-                <TableCell>
-                  <Badge variant="outline">Food</Badge>
-                </TableCell>
-                <TableCell className="text-right font-semibold">฿120</TableCell>
-                <TableCell className="text-right">
-                  <Button
-                    className="text-white bg-red-500 hover:bg-red-600 text-white"
-                    variant="ghost"
-                    size="sm"
-                  >
-                    <Trash className="h-4 w-4" />
-                    Delete
-                  </Button>
-                </TableCell>
-              </TableRow>
+              expenses.map((e) => 
+                <TableRow>
+                  <TableCell className="text-muted-foreground">
+                    {e.date}
+                  </TableCell>
+                  <TableCell className="font-medium">{e.title}</TableCell>
+                  <TableCell>
+                    <Badge variant="outline">{e.category}</Badge>
+                  </TableCell>
+                  <TableCell className="text-right font-semibold">฿{e.amount}</TableCell>
+                  <TableCell className="text-right">
+                    <Button
+                      className="text-white bg-red-500 hover:bg-red-600 text-white"
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => deleteExpense(e.id)}
+                    >
+                      <Trash className="h-4 w-4" />
+                      Delete
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              )
             )}
           </TableBody>
         </Table>

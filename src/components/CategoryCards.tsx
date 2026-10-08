@@ -8,7 +8,7 @@ import {
   Gamepad2,
   MoreHorizontal,
 } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 const iconMap: Record<string, React.ReactNode> = {
   Food: <Utensils className="h-4 w-4" />,
@@ -35,9 +35,15 @@ export function CategoryCards() {
 
         return (
           // Use Card component to display values by category
-          <div>
-            {category.label} - ฿{categoryTotal.toFixed(2)}
-          </div>
+          <Card>
+            <CardHeader>
+              {iconMap[category.label]}
+              {category.label}  
+            </CardHeader>
+            <CardContent>
+              <div className="text-xl font-bold">฿{categoryTotal.toFixed(2)}</div>
+            </CardContent>
+          </Card>
         );
       })}
     </div>
