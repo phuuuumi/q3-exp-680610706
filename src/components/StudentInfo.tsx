@@ -20,7 +20,7 @@ export function StudentInfo() {
     //   </button>
     // </div>
     <Drawer swipeDirection="left">
-      <DrawerTrigger render={<Button/>}>Phumiphat Thanoi</DrawerTrigger>
+      <DrawerTrigger render={<Button className="bg-blue-50 text-blue-700 hover:bg-blue-100"/>}>Phumiphat Thanoi</DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
           <DrawerTitle>ข้อมูลนักศึกษา</DrawerTitle>
@@ -35,13 +35,13 @@ export function StudentInfo() {
                   alt="16:9"
                   width={1000}
                   height={800}
-                  className="h-full w-full object-cover object-fit: fill"
+                  className="h-full w-full object-contain"
                 />
               </div>
               <div className="flex flex-col  gap-4 p-6 pt-0">
                 <h2 className="text-xl">Phumiphat Thanoi</h2>
                 <p className="text-foreground  text-sm">
-                  นักศึกษาวิศวกรรมคอมพิวเตอร์ปีที่2 มหาวิทยาลัยเชียงใหม่
+                  นักศึกษาวิศวกรรมคอมพิวเตอร์ปีที่ 2 มหาวิทยาลัยเชียงใหม่
                 </p>
                 <span className="flex gap-2">
                   <Badge className="bg-green-50 text-green-700">Hobbies</Badge> <p>เล่นเกม, เดินเล่น</p>
@@ -60,7 +60,7 @@ export function StudentInfo() {
           </Card>
         </div>
         <DrawerFooter>
-          <DrawerClose render={<Button variant="outline" />}>Cancel</DrawerClose>
+          <DrawerClose render={<Button />}>Cancel</DrawerClose>
         </DrawerFooter>
       </DrawerContent>
     </Drawer>
