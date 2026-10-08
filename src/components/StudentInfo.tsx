@@ -29,13 +29,13 @@ export function StudentInfo() {
         <div className="p-4">
           <Card>
             <CardContent className="flex flex-col gap-5 p-0">
-              <div className="relative h-48 w-full overflow-hidden">
+              <div className="relative  w-full overflow-hidden">
                 <img
-                  src="https://picsum.photos/1000/800?grayscale&random=52"
+                  src="https://scontent.fcnx1-1.fna.fbcdn.net/v/t39.30808-6/564585457_2021697801741043_8821260023939152011_n.jpg?stp=dst-jpg_tt6&cstp=mx828x828&ctp=s828x828&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=7-GQtSY1sq8Q7kNvwGjwGAY&_nc_oc=AdqOl7E46wj7-HsgM0-Ny7UijqJtzOT3e2iLGSXDtPqXVNOY8iLDF_a-eaX5ggar0QI&_nc_zt=23&_nc_ht=scontent.fcnx1-1.fna&_nc_gid=F8yON6aSXmCEf9PD80hJBQ&_nc_ss=7b2a8&oh=00_AQP7e-vDRzSBe2YQGyNAY2XkfXY_rdoetyRwih__90VKOA&oe=6ACCD3DC"
                   alt="16:9"
                   width={1000}
                   height={800}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover object-fit: fill"
                 />
               </div>
               <div className="flex flex-col  gap-4 p-6 pt-0">
